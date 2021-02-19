@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DestineySoccerAcademy.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace DestineySoccerAcademy.Controllers.Users
 {
@@ -17,7 +19,12 @@ namespace DestineySoccerAcademy.Controllers.Users
         // GET: ApplicationUsers
         public ActionResult Index()
         {
-            return View(db.ApplicationUsers.ToList());
+            //String userId = User.Identity.GetUserId();
+            //var bdUsers = HttpContext.GetOwinContext().Get<ApplicationDbContext>();
+            //var userImage = bdUsers.Users.Where(x => x.Id == userId).FirstOrDefault();
+
+            //var pic = new FileContentResult(userImage.ProfilePhoto, "image/jpeg");
+            return View(db.Users.ToList());
         }
 
         // GET: ApplicationUsers/Details/5
@@ -27,7 +34,7 @@ namespace DestineySoccerAcademy.Controllers.Users
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
+            ApplicationUser applicationUser = db.Users.Find(id);
             if (applicationUser == null)
             {
                 return HttpNotFound();
@@ -53,7 +60,7 @@ namespace DestineySoccerAcademy.Controllers.Users
         {
             if (ModelState.IsValid)
             {
-                db.ApplicationUsers.Add(applicationUser);
+                db.Users.Add(applicationUser);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -68,7 +75,7 @@ namespace DestineySoccerAcademy.Controllers.Users
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
+            ApplicationUser applicationUser = db.Users.Find(id);
             if (applicationUser == null)
             {
                 return HttpNotFound();
@@ -101,7 +108,7 @@ namespace DestineySoccerAcademy.Controllers.Users
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
+            ApplicationUser applicationUser = db.Users.Find(id);
             if (applicationUser == null)
             {
                 return HttpNotFound();
@@ -114,8 +121,8 @@ namespace DestineySoccerAcademy.Controllers.Users
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
-            db.ApplicationUsers.Remove(applicationUser);
+            ApplicationUser applicationUser = db.Users.Find(id);
+            db.Users.Remove(applicationUser);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

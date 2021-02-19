@@ -56,7 +56,11 @@ namespace DestineySoccerAcademy.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<DestineySoccerAcademy.Models.ApplicationUser> ApplicationUsers { get; set; }
+        //public System.Data.Entity.DbSet<DestineySoccerAcademy.Models.ApplicationUser> ApplicationUsers { get; set; }
+
+        //public System.Data.Entity.DbSet<DestineySoccerAcademy.Models.ApplicationUser> ApplicationUsers { get; set; }
+
+        //public System.Data.Entity.DbSet<DestineySoccerAcademy.Models.ApplicationUser> ApplicationUsers { get; set; }
 
         //public System.Data.Entity.DbSet<DestineySoccerAcademy.Models.ApplicationUser> ApplicationUsers { get; set; }
 
