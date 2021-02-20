@@ -24,6 +24,7 @@ namespace DestineySoccerAcademy.Controllers.Users
             //var userImage = bdUsers.Users.Where(x => x.Id == userId).FirstOrDefault();
 
             //var pic = new FileContentResult(userImage.ProfilePhoto, "image/jpeg");
+            
             return View(db.Users.ToList());
         }
 

@@ -52,6 +52,24 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -114,9 +132,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -124,6 +139,9 @@
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ZendeskApi_v2, Version=3.10.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZendeskApi_v2.3.10.10\lib\net452\ZendeskApi_v2.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -149,22 +167,7 @@
       <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Cookies">
-      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies">
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Google">
-      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Twitter">
-      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
-      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -177,10 +180,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Activity\ActivitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Users\ApplicationUsersController.cs" />
-    <Compile Include="Controllers\Users\MembersApiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,8 +199,34 @@
     <Compile Include="Migrations\202102152021357_EditedRegisterationInputs.Designer.cs">
       <DependentUpon>202102152021357_EditedRegisterationInputs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102191552485_BlogDBModelCreated.cs" />
+    <Compile Include="Migrations\202102191552485_BlogDBModelCreated.Designer.cs">
+      <DependentUpon>202102191552485_BlogDBModelCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102191601047_PendingBlogModel.cs" />
+    <Compile Include="Migrations\202102191601047_PendingBlogModel.Designer.cs">
+      <DependentUpon>202102191601047_PendingBlogModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102191614294_PendingBlogModelChangeDateCreatedToNullable.cs" />
+    <Compile Include="Migrations\202102191614294_PendingBlogModelChangeDateCreatedToNullable.Designer.cs">
+      <DependentUpon>202102191614294_PendingBlogModelChangeDateCreatedToNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102191827284_ActivitiesModelTweaked.cs" />
+    <Compile Include="Migrations\202102191827284_ActivitiesModelTweaked.Designer.cs">
+      <DependentUpon>202102191827284_ActivitiesModelTweaked.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102191831542_ActivitiesModelTweakedAgain.cs" />
+    <Compile Include="Migrations\202102191831542_ActivitiesModelTweakedAgain.Designer.cs">
+      <DependentUpon>202102191831542_ActivitiesModelTweakedAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102191843016_ActivitiesModelTweakedDate.cs" />
+    <Compile Include="Migrations\202102191843016_ActivitiesModelTweakedDate.Designer.cs">
+      <DependentUpon>202102191843016_ActivitiesModelTweakedDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Activities.cs" />
+    <Compile Include="Models\ActivitiesViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -503,7 +532,11 @@
     <Content Include="Views\ApplicationUsers\Details.cshtml" />
     <Content Include="Views\ApplicationUsers\Edit.cshtml" />
     <Content Include="Views\ApplicationUsers\Index.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Activities\Create.cshtml" />
+    <Content Include="Views\Activities\Delete.cshtml" />
+    <Content Include="Views\Activities\Details.cshtml" />
+    <Content Include="Views\Activities\Edit.cshtml" />
+    <Content Include="Views\Activities\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -530,6 +563,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102152021357_EditedRegisterationInputs.resx">
       <DependentUpon>202102152021357_EditedRegisterationInputs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102191552485_BlogDBModelCreated.resx">
+      <DependentUpon>202102191552485_BlogDBModelCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102191601047_PendingBlogModel.resx">
+      <DependentUpon>202102191601047_PendingBlogModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102191614294_PendingBlogModelChangeDateCreatedToNullable.resx">
+      <DependentUpon>202102191614294_PendingBlogModelChangeDateCreatedToNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102191827284_ActivitiesModelTweaked.resx">
+      <DependentUpon>202102191827284_ActivitiesModelTweaked.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102191831542_ActivitiesModelTweakedAgain.resx">
+      <DependentUpon>202102191831542_ActivitiesModelTweakedAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102191843016_ActivitiesModelTweakedDate.resx">
+      <DependentUpon>202102191843016_ActivitiesModelTweakedDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
