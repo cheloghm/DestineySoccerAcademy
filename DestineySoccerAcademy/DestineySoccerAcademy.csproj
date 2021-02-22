@@ -181,6 +181,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Activity\ActivitiesController.cs" />
+    <Compile Include="Controllers\Gallery\PhotoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Users\ApplicationUsersController.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\gallery.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -398,6 +400,19 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\img1s.jpg" />
+    <Content Include="Image\img2s.jpg" />
+    <Content Include="Image\img3s.jpg" />
+    <Content Include="Image\img4s.jpg" />
+    <Content Include="Image\img5s.JPG" />
+    <Content Include="Image\img6.JPG" />
+    <Content Include="Image\img5.JPG" />
+    <Content Include="Image\img1.jpg" />
+    <Content Include="Image\img4.jpg" />
+    <Content Include="Image\img3.jpg" />
+    <Content Include="Image\img2.jpg" />
+    <Content Include="Image\img6s.JPG" />
+    <Content Include="Image\John Charles.JPG" />
     <Content Include="Image\noImg.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -537,6 +552,7 @@
     <Content Include="Views\Activities\Details.cshtml" />
     <Content Include="Views\Activities\Edit.cshtml" />
     <Content Include="Views\Activities\Index.cshtml" />
+    <Content Include="Views\Photo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
