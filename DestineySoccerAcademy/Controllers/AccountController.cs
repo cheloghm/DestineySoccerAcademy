@@ -201,6 +201,11 @@ namespace DestineySoccerAcademy.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //For creating players
+                    var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    var DestineySoccerManagers = new RoleManager<IdentityRole>(roleStore);
+                    await DestineySoccerManagers.CreateAsync(new IdentityRole("Players"));
+                    await UserManager.AddToRoleAsync(user.Id, "Players");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

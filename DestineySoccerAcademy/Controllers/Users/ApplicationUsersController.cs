@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Mvc;
 using DestineySoccerAcademy.Models;
@@ -12,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace DestineySoccerAcademy.Controllers.Users
 {
+    [Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
     public class ApplicationUsersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -19,13 +21,19 @@ namespace DestineySoccerAcademy.Controllers.Users
         // GET: ApplicationUsers
         public ActionResult Index()
         {
-            //String userId = User.Identity.GetUserId();
-            //var bdUsers = HttpContext.GetOwinContext().Get<ApplicationDbContext>();
-            //var userImage = bdUsers.Users.Where(x => x.Id == userId).FirstOrDefault();
+            //List<RegisterViewModel> modelLst = new List<RegisterViewModel>();
+            var role = db.Roles.Include(x => x.Users).ToList();
+            var usr = db.UserRoles;
 
-            //var pic = new FileContentResult(userImage.ProfilePhoto, "image/jpeg");
             
-            return View(db.Users.ToList());
+
+            if (User.IsInRole("CanManagePlayersStaffACtivitiesBlogs"))
+                return View("List", db.Users.ToList());
+            else if (User.IsInRole("CanManagePlayersACtivitiesBlogs"))
+                return View("ReadOnlyList", db.Users.ToList());
+            else
+                ViewBag.Message = string.Format("You don't have the Admin previlage for this");
+                return View();
         }
 
         // GET: ApplicationUsers/Details/5

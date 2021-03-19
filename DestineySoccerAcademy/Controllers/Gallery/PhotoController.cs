@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace DestineySoccerAcademy.Controllers.Gallery
 {
+    [AllowAnonymous]
     public class PhotoController : Controller
     {
         // GET: Photo

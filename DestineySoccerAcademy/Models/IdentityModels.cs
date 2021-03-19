@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
@@ -57,11 +58,6 @@ namespace DestineySoccerAcademy.Models
         }
 
         public System.Data.Entity.DbSet<DestineySoccerAcademy.Models.Activities> Activities { get; set; }
-
-
-
-        //public System.Data.Entity.DbSet<DestineySoccerAcademy.Models.ApplicationUser> ApplicationUsers { get; set; }
-
-        //public System.Data.Entity.DbSet<DestineySoccerAcademy.Models.ApplicationUser> ApplicationUsers { get; set; }
+        public IEnumerable<object> UserRoles { get; internal set; }
     }
 }

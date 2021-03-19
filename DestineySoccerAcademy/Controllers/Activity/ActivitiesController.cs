@@ -10,6 +10,7 @@ using DestineySoccerAcademy.Models;
 
 namespace DestineySoccerAcademy.Controllers.Activity
 {
+    //[Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
     public class ActivitiesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -17,10 +18,15 @@ namespace DestineySoccerAcademy.Controllers.Activity
         // GET: Activities
         public ActionResult Index()
         {
-            return View(db.Activities.ToList());
+            if (User.IsInRole("CanManagePlayersStaffACtivitiesBlogs") || User.IsInRole("CanManagePlayersACtivitiesBlogs"))
+                return View(db.Activities.ToList());
+            else
+                return View("Blog", db.Activities.ToList());
+            
         }
 
         // GET: Activities/Details/5
+        [Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +42,7 @@ namespace DestineySoccerAcademy.Controllers.Activity
         }
 
         // GET: Activities/Create
+        [Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
         public ActionResult Create()
         {
             return View();
@@ -44,6 +51,7 @@ namespace DestineySoccerAcademy.Controllers.Activity
         // POST: Activities/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Title,Content,CreateTime")] Activities activities)
@@ -59,6 +67,7 @@ namespace DestineySoccerAcademy.Controllers.Activity
         }
 
         // GET: Activities/Edit/5
+        [Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,6 +85,7 @@ namespace DestineySoccerAcademy.Controllers.Activity
         // POST: Activities/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Title,Content,CreateTime")] Activities activities)
@@ -90,6 +100,7 @@ namespace DestineySoccerAcademy.Controllers.Activity
         }
 
         // GET: Activities/Delete/5
+        [Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +116,7 @@ namespace DestineySoccerAcademy.Controllers.Activity
         }
 
         // POST: Activities/Delete/5
+        [Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

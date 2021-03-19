@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace DestineySoccerAcademy.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public FileContentResult UserPhotos()
