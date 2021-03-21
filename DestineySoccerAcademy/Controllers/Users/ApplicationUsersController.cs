@@ -13,23 +13,18 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace DestineySoccerAcademy.Controllers.Users
 {
-    [Authorize(Roles = "CanManagePlayersStaffACtivitiesBlogs, CanManagePlayersACtivitiesBlogs")]
+    [Authorize(Roles = RoleName.CMSP), Authorize(Roles = RoleName.CMP)]
     public class ApplicationUsersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ApplicationUsers
         public ActionResult Index()
-        {
-            //List<RegisterViewModel> modelLst = new List<RegisterViewModel>();
-            var role = db.Roles.Include(x => x.Users).ToList();
-            var usr = db.UserRoles;
+        {           
 
-            
-
-            if (User.IsInRole("CanManagePlayersStaffACtivitiesBlogs"))
+            if (User.IsInRole(RoleName.CMSP))
                 return View("List", db.Users.ToList());
-            else if (User.IsInRole("CanManagePlayersACtivitiesBlogs"))
+            else if (User.IsInRole(RoleName.CMP))
                 return View("ReadOnlyList", db.Users.ToList());
             else
                 ViewBag.Message = string.Format("You don't have the Admin previlage for this");
