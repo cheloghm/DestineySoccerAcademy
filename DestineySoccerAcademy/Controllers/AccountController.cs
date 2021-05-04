@@ -204,8 +204,8 @@ namespace DestineySoccerAcademy.Controllers
                     //For creating players
                     var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
                     var DestineySoccerManagers = new RoleManager<IdentityRole>(roleStore);
-                    await DestineySoccerManagers.CreateAsync(new IdentityRole("Players"));
-                    await UserManager.AddToRoleAsync(user.Id, "Players");
+                    await DestineySoccerManagers.CreateAsync(new IdentityRole(RoleName.Ply));
+                    await UserManager.AddToRoleAsync(user.Id, RoleName.Ply);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -267,8 +267,8 @@ namespace DestineySoccerAcademy.Controllers
                     //For creating managers
                     var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
                     var DestineySoccerManagers = new RoleManager<IdentityRole>(roleStore);
-                    await DestineySoccerManagers.CreateAsync(new IdentityRole("CanManagePlayersStaffACtivitiesBlogs"));
-                    await UserManager.AddToRoleAsync(user.Id, "CanManagePlayersStaffACtivitiesBlogs");
+                    await DestineySoccerManagers.CreateAsync(new IdentityRole(RoleName.CMSP));
+                    await UserManager.AddToRoleAsync(user.Id, RoleName.CMSP);
 
                     //For signing-in after registration
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
@@ -332,8 +332,8 @@ namespace DestineySoccerAcademy.Controllers
                     //for creating academy staff roles
                     var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
                     var DestineySoccerStaff = new RoleManager<IdentityRole>(roleStore);
-                    await DestineySoccerStaff.CreateAsync(new IdentityRole("CanManagePlayersACtivitiesBlogs"));
-                    await UserManager.AddToRoleAsync(user.Id, "CanManagePlayersACtivitiesBlogs");
+                    await DestineySoccerStaff.CreateAsync(new IdentityRole(RoleName.CMP));
+                    await UserManager.AddToRoleAsync(user.Id, RoleName.CMP);
 
                     //For signini-n after registration
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);

@@ -13,12 +13,13 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace DestineySoccerAcademy.Controllers.Users
 {
-    [Authorize(Roles = RoleName.CMSP), Authorize(Roles = RoleName.CMP)]
+    //[Authorize(Roles = RoleName.CMSP), Authorize(Roles = RoleName.CMP)]
     public class ApplicationUsersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ApplicationUsers
+        [AllowAnonymous]
         public ActionResult Index()
         {           
 

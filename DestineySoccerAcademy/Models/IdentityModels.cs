@@ -48,7 +48,7 @@ namespace DestineySoccerAcademy.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection_DatabasePublish", throwIfV1Schema: false)
         {
         }
 
