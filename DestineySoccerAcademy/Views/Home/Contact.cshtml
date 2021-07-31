@@ -1,17 +1,34 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<hr />
+<div class="row">
+    <div class="container-fluid">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63434.495818422096!2d7.503446989001011!3d6.438208257531804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044a3cf887d1a25%3A0x9e342e82908e0c3d!2sEnugu!5e0!3m2!1sen!2sng!4v1627568028864!5m2!1sen!2sng" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="container">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="container">
+        <div class="col-lg-12">
+            <form class="form" style="width: 100%">
+                <h2 class="form-signin-heading">Contact Us</h2>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required=""> <br />
+
+                <label for="subject" class="sr-only">Subject</label>
+                <input type="text" id="subject" class="form-control" placeholder="Subject" required=""> <br />
+
+                <label for="message" class="sr-only">Message</label>
+                <textarea class="form-control" placeholder="Message" id="message"></textarea> <br />
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Message Us</button>
+            </form>
+        </div>
+    </div>
+</div>
