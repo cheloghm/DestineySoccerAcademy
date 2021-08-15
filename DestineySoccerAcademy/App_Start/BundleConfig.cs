@@ -11,6 +11,9 @@ namespace DestineySoccerAcademy
             bundles.Add(new ScriptBundle("~/bundles/lib").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js",
+                        "~/Scripts/js/main.js",
+                        "~/Scripts/js/vendor/vendor.js",
+                        "~/Scripts/js/vendor/modernizr.js",
                         "~/scripts/datatables/jquery.datatables.js",
                         "~/scripts/datatables/datatables.bootstrap.js"));
 
@@ -25,6 +28,9 @@ namespace DestineySoccerAcademy
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
+                      "~/Content/css/layerslider.css",
+                      "~/Content/css/style.css",
+                      "~/Content/css/vendor.css",
                       "~/Content/datatables/css/datatables.bootstrap.css"));
         }
     }

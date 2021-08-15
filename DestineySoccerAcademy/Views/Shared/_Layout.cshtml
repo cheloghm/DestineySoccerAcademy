@@ -1,58 +1,168 @@
 ﻿<!DOCTYPE html>
-<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<html class=no-js lang="">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/css/layerslider.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/vendor.css" rel="stylesheet" />
+
+    <a href="~/fonts/fontawesome-webfont93e3.eot"></a>
+    <a href="~/fonts/fontawesome-webfont93e3.ttf"></a>
+    <a href="~/fonts/fontawesome-webfont93e3.woff"></a>
+    <a href="~/fonts/fontawesome-webfont93e3.woff2"></a>
+    <a href="~/fonts/fontawesome-webfontd41d.eot"></a>
+    <img src="~/fonts/fontawesome-webfont93e3.svg" />
+    <script src="~/Scripts/js/vendor/modernizr.js"></script>
+    <script src="~/Scripts/js/vendor/vendor.js"></script>
+    <script src="~/Scripts/js/main.js"></script>
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <img src="@Url.Action("UserPhotos", "Home" )" height="48" width="48" />
+    <div class="wrapper">
+        <header class=header-main>
+            <!--<div class=header-upper>
+                <div class=container>
+                    <div class=row>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-envelope"></i> Send Us Email</a></li>-->
+                            <!-- <li><a href=shopcart.html><i class="fa fa-shopping-cart"></i> <span>cart(<span
+                        class=cartitems>0</span>)</span></a></li> -->
+                        <!--</ul>
+                    </div>
+                </div>
+            </div>-->
+            <div class="header-lower clearfix">
+                <div class=container>
+                    <div class=row>
+                        <h1 class=logo>
+                            <a href=index.html><img src=~/images/DESTINY.png alt=image></a>
+                        </h1>
 
+                        <div class=menubar>
+                            <nav class=navbar>
+                                <div class=nav-wrapper>
+                                    <div class=navbar-header>
+                                        <button type=button class=navbar-toggle>
+                                            <span class=sr-only>Toggle navigation</span>
+                                            <span class=icon-bar></span>
+                                        </button>
+                                    </div>
+                                    <div class=nav-menu>
+                                        <ul class="nav navbar-nav menu-bar">
+                                            <li>
+                                                @Html.ActionLink("Home", "Index", "Home")
+                                                <span></span> <span></span>
+                                                <span></span> <span></span>
+                                            </li>
+
+                                            <li>
+                                                <a>about us <span></span> <span></span> <span></span> <span></span></a>
+                                                <ul class=sub-menu>
+                                                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                                                    <!-- <li><a href=clubHistoryDetails.html>Club History</a></li>
+            <li><a href=achivement_details.html>awards</a></li> -->
+                                                </ul>
+                                            </li>
+                                  
+                                            <li>
+                                                @Html.ActionLink("Contact", "Contact", "Home")
+                                                     <span></span> <span></span> <span></span>
+                                                    <span></span>
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Gallery", "Index", "Photo")
+                                                     <span></span> <span></span> <span></span>
+                                                    <span></span>
+                                            </li>
+
+
+                                            <!-- <li><a>error <span></span> <span></span> <span></span> <span></span></a>
+        <ul class=sub-menu>
+            <li><a href=400.html>400 page</a></li>
+            <li><a href=401.html>401 page</a></li>
+            <li><a href=403.html>403 page</a></li>
+            <li><a href=404.html>404 page</a></li>
+            <li><a href=500.html>500 page</a></li>
+            <li><a href=503.html>503 page</a></li>
+        </ul>
+    </li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class=social>
+                            <a href="#" class=facebook>
+                                <i class="fa fa-facebook"></i>
+                            </a> <a href="#" class=twitter>
+                                <i class="fa fa-twitter"></i>
+                            </a> <a href="#" class=instagram>
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+
+    <footer class=footer-type01>
+        <div class=container>
+            <div class=row>
+                <ul class=footer-widget>
+                    <li class=widget-about>
+                        <h4 class=footerheading>about <span>destiny soccer academy</span></h4>
+
+                        <p>
+                            The Academy’s vision is to provide a unique training program specifically developed for young people that brings together the key aspects of football into a complete system of technical, tactical, psychological and physical development
+                        </p>
+
+                        <p>
+                            <span class=uppercaseheading>address:</span><span class=red></span> Uwani, Enugu State, Nigeria.
+                        </p>
+
+                        <p><span class=uppercaseheading>call:</span> <span class=red>+234 8034352735</span></p>
                     </li>
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Gallery", "Index", "Photo")</li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Activities", "Index", "Activities")</li>
-                    }
-                    @if (User.Identity.IsAuthenticated && User.IsInRole("CanManagePlayersACtivitiesBlogs"))
-                    {
-                        <li>@Html.ActionLink("Details", "Index", "ApplicationUsers")</li>
-                    }
-                    @if (User.Identity.IsAuthenticated && User.IsInRole("CanManagePlayersStaffACtivitiesBlogs"))
-                    {
-                        <li>@Html.ActionLink("Details", "Index", "ApplicationUsers")</li>
-                    }
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
-    <div class="container-fluid body-content">
-        @RenderBody()
-        <hr />
-        <footer class="text-center">
-            <p>&copy; @DateTime.Now.Year -  Destiney Soccer Academy. All rights reserved</p>
-        </footer>
+        <div class=footer-type02>
+            <div class=container>
+                <div class=row>
+                    <a href=index-2.html class=footer-logo><img src=~/images/DESTINY.png alt=image></a>
+
+                    <div class=footer-container>
+                        <ul class=clearfix>
+                            <li>
+                                <a href=https://www.facebook.com/templatespoint.net class=bigsocial-link>
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=https://twitter.com/ class=bigsocial-link target=_blank>
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=https://www.instagram.net/ class=bigsocial-link target=_blank>
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     </div>
 
     @Scripts.Render("~/bundles/lib")
