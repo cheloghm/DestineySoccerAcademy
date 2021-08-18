@@ -545,7 +545,8 @@
             <div class=gutter></div>
         </div>
     </div>
-    <a class="btn btn-red">read more</a>
+    @*<a href="" class="btn btn-red">View more</a>*@
+    @Html.ActionLink("View more", "Index", "Photo", null, new { @class= "btn btn-red" })
 </section>
 <section class=social-media>
     <div class=container>
