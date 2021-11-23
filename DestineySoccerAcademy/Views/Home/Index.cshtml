@@ -1,31 +1,108 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿﻿@{ ViewBag.Title = "Home Page"; }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+<div class="wrapper">
+    <div class=banner id=layerSlider style="width: 100%;">
+        <div class=ls-slide data-ls="transition3d: 33,15; slidedelay: 8000 ; durationin:0;">
+            <img src=~/images/banner/background01.jpg class=ls-bg alt="Slide background">
+
+            <div class="ls-l layercontent01" style="top: 50%; left: 50%; z-index:4;" data-ls="offsetxin:left; offsetxout:right; durationin: 4000; parallaxlevel: 8;"><img src=~/images/banner/player.png alt=innerimage class=img-responsive style="max-width: 100% !important ;"></div>
+            <img src=~/images/banner/ball.png alt=innerimage class="ls-l layercontent02" style=z-index:5; data-ls="offsetxin: right; offsetxout:left; rotatein:-360; easingin: easeoutquart; durationin: 4000; delayin: 250; parallaxlevel: -5;">
+            <img src=~/images/banner/front_particles.png alt=particles class=ls-l style="z-index:3; left:0;" data-ls="offsetxin: left; offsetxout:left; scalexin:50; easingin: easeoutquart; durationin: 3000; delayin: 250;">
+            <img src=~/images/banner/back_particles.png alt=particles class=ls-l style="z-index:3; left:50%;" data-ls="offsetxin: left; offsetxout:left; scalein:90; easingin: easeoutquart; durationin: 3000; delayin: 250;">
+
+            <h2 class="ls-l bannertext layercontent03" data-ls="offsetxin:left; rotatexin:90 ; durationin: 3500;">
+                Destiny
+            </h2>
+
+            <h2 class="ls-l bannertext01 italic01 layercontent04" data-ls="offsetxin:left; scalexin:9; durationin: 4000;">Soccer</h2>
+            <h4 class="ls-l bannertext02 layercontent05" data-ls="offsetxin:left; rotatexin:90 ; durationin: 4500;">
+                Academy
+            </h4>
+
+        </div>
+    </div>
+    <div class=banner-text>
+        <div class=container>
+            <div class=row>Destiny Soccer<sup>Academy</sup> </div>
+        </div>
+    </div>
+
+    <section class=about>
+        <div class=container>
+            <div class=row>
+                <h2 class=heading>Destiny <span>Soccer Academy </span> way</h2>
+
+                <div class=about-wrap>
+                    <div class="tab-content nav-content">
+                        <p role=tabpanel class="tab-pane fade" id=matches>
+                            Matches are an essential part of sports. They give rise to competitive spirit and sportsmanship. Moreover, matches are a kind of get-together where players, apart from playing and displaying their physical stamina, exchange
+                            ideas and information and have free and frank discussions among themselves. All our matches will stream online and uploaded on our yotube channel
+                        </p>
+
+                        <p role=tabpanel class="tab-pane active fade in" id=Tatics>
+                            We have developed an adaptable playing style for all players, to take into account the range of experience and skill. Our playing formation is based on a 4 – 2 – 3 – 1 system of play (which is adaptable to include 4 – 3 – 3,
+                            4 – 5 – 1 and 4 – 4 – 2). This system promotes confidence on the ball and in a team situation. We aim to rotate playing positions to make the experience as wide as possible, and to create adaptable players. Players may
+                            be played in a number of positions during their time at IHM to facilitate fixtures and for the IHM coaches to assess their best playing positions. Our aim is to develop players in a supportive and safe environment, and
+                            to encourage them to reach their full potential. We also want our students to enjoy their course with us, while working hard to continue their personal development.
+                        </p>
+
+                        <p role=tabpanel class="tab-pane fade" id=traning>
+                            The following topics will be covered in team training sessions: Basic techniques – dribbling, running with the ball, passing and receiving, decision making, finding space, developing possession, individual work and combination
+                            play, support play and turning Defending – with appropriate numbers and recovery Attacking – transition counter attack and attacking when outnumbered Finishing – shooting repetition, crossing & finishing, individual and
+                            combined finishing, 1v1 finishing Team Shape & formation The following topics will be covered in personal training sessions: Strength, Speed and flexibility Aerobic endurance – Continuous & Interval Muscular endurance
+                        </p>
+                    </div>
+                    <div class=nav-header id=aboutTab>
+                        <ul class="nav nav-tabs clearfix" role=tablist>
+                            <li><a href=#matches aria-controls=matches role=tab data-toggle=tab>Matches</a></li>
+                            <li class=active>
+                                <a href=#Tatics aria-controls=static role=tab data-toggle=tab>tatics</a>
+                            </li>
+                            <li><a href=#traning aria-controls=traning role=tab data-toggle=tab>training</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class=latestResult>
+        <div class=container>
+
+        </div>
+    </section>
+
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<section class=social-media>
+    <div class=container>
+        <div class=row>
+            <ul class=socialinfo>
+                <li>
+                    <a href="#">
+                        <div class=sociallink><img src="~/images/gallery/john.jpg" style="width: 80px; height: 80px; border-radius: 50%; background-position: top center; background-size: cover; background-repeat: no-repeat;" alt=""></div>
+                        <p>The club has become a home for me since i arrived. Well, in rating this academy i must tell is the best in this eastern part of Nigeria and they are working internationall with professional trainees.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class=sociallink><img src="~/images/boardMember/boardMember02.jpg" style="width: 80px; height: 80px; border-radius: 50%; background-position: top center; background-size: cover; background-repeat: no-repeat;" alt=""></div>
+                        <p>For me the training and the academy has been an amazing one coupled with the coaches and the fun moments. I will always recommend this academy to anyone ho seeks for a proffessional football in the future.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class=sociallink><img src="~/images/boardMember/boardMember02.jpg" style="width: 100px; height: 100px; border-radius: 50%; background-position: top center; background-size: cover; background-repeat: no-repeat;" alt=""></div>
+                        <p>
+                            Coach Ezinna always encourage us to continue training and as a goalkeeper he inspired me to continue with the hand-gloves. I can tell that since i arrive at this academy i can tell you this me who has been dreaming to be a
+                            goalkeeper
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</section>
+
+<script src="~/Scripts/js/vendor/vendor.js"></script>
+<script src="~/Scripts/js/main.js"></script>
