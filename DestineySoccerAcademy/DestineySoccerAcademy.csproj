@@ -224,6 +224,10 @@
     <Compile Include="Migrations\202102191843016_ActivitiesModelTweakedDate.Designer.cs">
       <DependentUpon>202102191843016_ActivitiesModelTweakedDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105042352007_LatestMigratin.cs" />
+    <Compile Include="Migrations\202105042352007_LatestMigratin.Designer.cs">
+      <DependentUpon>202105042352007_LatestMigratin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activities.cs" />
@@ -401,6 +405,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\1-min.jpeg" />
+    <Content Include="Image\2-min.jpeg" />
+    <Content Include="Image\3-min.jpeg" />
+    <Content Include="Image\48387506_1074492936064832_5176733015400775680_n.jpg" />
+    <Content Include="Image\avatar-2.jpg" />
+    <Content Include="Image\bg-20.jpg" />
+    <Content Include="Image\bg-27.jpg" />
+    <Content Include="Image\community\29187173_887783768069084_2901082406507249664_n_1.png" />
+    <Content Include="Image\destiny\1.jpg" />
+    <Content Include="Image\destiny\10.jpg" />
+    <Content Include="Image\destiny\11.jpg" />
+    <Content Include="Image\destiny\2.jpg" />
+    <Content Include="Image\destiny\3.jpg" />
+    <Content Include="Image\destiny\4.jpg" />
+    <Content Include="Image\destiny\5.jpg" />
+    <Content Include="Image\destiny\6.jpg" />
+    <Content Include="Image\destiny\7.jpg" />
+    <Content Include="Image\destiny\8.jpg" />
+    <Content Include="Image\destiny\9.jpg" />
     <Content Include="Image\img1s.jpg" />
     <Content Include="Image\img2s.jpg" />
     <Content Include="Image\img3s.jpg" />
@@ -413,8 +436,12 @@
     <Content Include="Image\img3.jpg" />
     <Content Include="Image\img2.jpg" />
     <Content Include="Image\img6s.JPG" />
+    <Content Include="Image\item-blog-8.jpg" />
+    <Content Include="Image\item-blog-9.jpg" />
+    <Content Include="Image\item-shop-1.jpg" />
     <Content Include="Image\John Charles.JPG" />
     <Content Include="Image\noImg.jpg" />
+    <Content Include="Image\team\tomi.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\DataTables\css\semanticui.scss" />
@@ -561,7 +588,7 @@
     <Content Include="Views\Activities\Edit.cshtml" />
     <Content Include="Views\Activities\Index.cshtml" />
     <Content Include="Views\Photo\Index.cshtml" />
-    <Content Include="Views\ApplicationUsers\ReadOnlyList.cshtml" />
+    <Content Include="Views\ApplicationUsers\Index.cshtml" />
     <Content Include="Views\Activities\Blog.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -608,6 +635,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102191843016_ActivitiesModelTweakedDate.resx">
       <DependentUpon>202102191843016_ActivitiesModelTweakedDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105042352007_LatestMigratin.resx">
+      <DependentUpon>202105042352007_LatestMigratin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

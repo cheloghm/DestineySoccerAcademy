@@ -102,6 +102,7 @@ namespace DestineySoccerAcademy.Models
 
         [Display(Name = "Profile Photo")]
         public byte[] ProfilePhoto { get; set; }
+
     }
 
     public class ResetPasswordViewModel

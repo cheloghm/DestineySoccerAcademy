@@ -18,15 +18,32 @@ namespace DestineySoccerAcademy.Controllers.Users
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        //public ActionResult GetPlayers()
+        //{
+        //    //var usersWithRoles = (from user in db.Users
+        //    //                      from userRole in user.Roles
+        //    //                      join role in db.Roles on userRole.RoleId equals
+        //    //                      "24d83418-4f4e-4a25-bc8a-99dd1f9f9389"
+        //    //                      select new ApplicationUser()
+        //    //                      {
+        //    //                          RoleName = role.Name
+        //    //                      });
+
+        //    //return View("List", db.Roles.Where(r => r.Name == "Players").ToList());
+        //    //return View("List", db.Users.Where(r => r.Roles.Where(n => n.RoleId.All(r.Roles.id == "24d83418-4f4e-4a25-bc8a-99dd1f9f9389")));
+        //}
+
         // GET: ApplicationUsers
         [AllowAnonymous]
         public ActionResult Index()
-        {           
-
+        {
             if (User.IsInRole(RoleName.CMSP))
                 return View("List", db.Users.ToList());
             else if (User.IsInRole(RoleName.CMP))
+            {
                 return View("ReadOnlyList", db.Users.ToList());
+                //GetPlayers();
+            }
             else
                 ViewBag.Message = string.Format("You don't have the Admin previlage for this");
                 return View();

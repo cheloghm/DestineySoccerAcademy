@@ -36,6 +36,8 @@ namespace DestineySoccerAcademy.Models
         public DateTime Create_date { get; set; }
         // Here we add a byte to Save the user Profile Pictuer  
         public byte[] ProfilePhoto { get; set; }
+
+        public string RoleName { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -49,6 +51,7 @@ namespace DestineySoccerAcademy.Models
     {
         public ApplicationDbContext()
             : base("DefaultConnection_DatabasePublish", throwIfV1Schema: false)
+            //: base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 

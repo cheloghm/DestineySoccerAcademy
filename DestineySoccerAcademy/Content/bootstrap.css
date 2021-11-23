@@ -6833,3 +6833,111 @@ button.close {
 }
 
 
+/*MY CODE*/
+
+/*Home starts here*/
+#header-img-text .bg {
+    background-image: url('../images/bg-20.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+#header-img-text .bg-wrap {
+    background: #000000;
+}
+
+#benefits-single-counter .bg {
+    background-image: url('../images/48387506_1074492936064832_5176733015400775680_n.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.26;
+}
+
+#benefits-single-counter .bg-wrap {
+    background: #000000;
+}
+
+#action-text-btn .bg-wrap {
+    background: #000000;
+}
+
+#action-text-btn .bg {
+    background-image: url('../images/bg-20.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+}
+/*Home ends here*/
+
+/*Contact starts here*/
+#header-text-text .bg {
+    background-image: url('../images/item-blog-9.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.09;
+}
+
+#header-text-text .bg-wrap {
+    background: #000000;
+}
+
+#contact-img-map-text .bg-wrap {
+    background-color: #F2F0ED;
+}
+
+#action-text-btn .bg-wrap {
+    background: #000000;
+}
+
+#action-text-btn .bg {
+    background-image: url('../images/bg-20.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+}
+/*Contact ends here*/
+
+/*About starts here*/
+#header-text-text .bg {
+    background-image: url('../images/item-blog-9.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.09;
+}
+
+#header-text-text .bg-wrap {
+    background: #000000;
+}
+
+#benefits-3col-12 .bg-wrap {
+    background-color: #f4f5f6;
+}
+
+#testimonial-2col .bg {
+    background-image: url('../images/bg-27.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.2;
+}
+
+#action-text-btn .bg-wrap {
+    background: #000000;
+}
+
+#action-text-btn .bg {
+    background-image: url('../images/bg-20.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+}
+/*About ends here*/
+
